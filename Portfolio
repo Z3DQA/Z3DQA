@@ -1,0 +1,37 @@
+I. Bugs:
+1. The dot sign is missing
+2. There is no zero button
+3. Buttons are required: M-, MR, MC, MS
+
+II. TC-1.Importance: Critical
+Environment: Bicycle, Pressure Gauge
+Steps:
+1. Unscrew the tire cap
+2. Connect the pressure gauge
+Expected result: Tire pressure 3.23 atmospheres
+
+TC-2.The pedals turn the rear wheel
+Importance: Critical
+Environment: Bicycle
+Steps:
+1. Lift the bike behind the seat with one hand
+2. Turn the pedal mechanism with the other hand
+Expected result: The rear wheel is moving
+
+TC-3.Checking the brakes
+Environment: Bicycle
+Steps:
+1. Clamp the front brake
+2. Try to move it with a move
+3. Clamp the rear brake
+4. Try to move the move
+Expected result: The bike does not ride
+
+Checklist:
+1. The front wheel is spinning
+2. The steering wheel turns
+3. The seat can be adjusted
+4. You can jump on both wheels
+
+III. select * from Notebooks
+where processors = Intel
