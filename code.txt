@@ -1,0 +1,29 @@
+https://stackoverflow.com/questions/57709338/how-to-create-random-email-password-keyword-on-order-to-test-sign-up-form-in
+
+
+import com.kms.katalon.core.annotation.Keyword
+
+
+class help_keyword_RandomEmail {
+
+    //random mail generator
+    @Keyword
+    public String getEmail(String suffix,String prefix){
+        int randomNo = (int)(Math.random() * 100000);
+        return suffix + randomNo + "@" + prefix;
+    }
+}
+
+
+
+
+
+
+
+
+
+String mail = CustomKeywords.'mubasher.help_keyword_RandomEmail.getEmail'('opps'(suffix is here), 'mailinator.com' (prefix is here))
+
+WebUI.sendKeys(findTestObject('Sign Up/email'), mail)
+
+
