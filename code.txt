@@ -1,29 +1,50 @@
-https://stackoverflow.com/questions/57709338/how-to-create-random-email-password-keyword-on-order-to-test-sign-up-form-in
-
-
-import com.kms.katalon.core.annotation.Keyword
-
-
-class help_keyword_RandomEmail {
-
-    //random mail generator
-    @Keyword
-    public String getEmail(String suffix,String prefix){
-        int randomNo = (int)(Math.random() * 100000);
-        return suffix + randomNo + "@" + prefix;
-    }
+import org.junit.Test;
+import org.junit.Before;
+import org.junit.After;
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNot.not;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.Keys;
+import java.util.*;
+import java.net.MalformedURLException;
+import java.net.URL;
+public class QATest {
+  private WebDriver driver;
+  private Map<String, Object> vars;
+  JavascriptExecutor js;
+  @Before
+  public void setUp() throws MalformedURLException {
+    driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
+    js = (JavascriptExecutor) driver;
+    vars = new HashMap<String, Object>();
+  }
+  @After
+  public void tearDown() {
+    driver.quit();
+  }
+  @Test
+  public void qA() {
+    driver.get("https://cheboksari.rvkusa.com/");
+    driver.manage().window().setSize(new Dimension(837, 701));
+    driver.findElement(By.linkText("Чебоксары")).click();
+    driver.findElement(By.linkText("Меню")).click();
+    driver.findElement(By.linkText("Стритфуд")).click();
+    driver.findElement(By.cssSelector(".product-wrap:nth-child(5) > .product:nth-child(1) .btn")).click();
+    driver.findElement(By.cssSelector(".where_deliv > li:nth-child(2)")).click();
+    driver.findElement(By.cssSelector(".btn:nth-child(9)")).click();
+    driver.close();
+  }
 }
-
-
-
-
-
-
-
-
-
-String mail = CustomKeywords.'mubasher.help_keyword_RandomEmail.getEmail'('opps'(suffix is here), 'mailinator.com' (prefix is here))
-
-WebUI.sendKeys(findTestObject('Sign Up/email'), mail)
-
-
