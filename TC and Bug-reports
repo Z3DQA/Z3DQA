@@ -1,0 +1,242 @@
+TC-1. Entering a valid email
+Priority: Immediate Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write an email in the format **@**.**
+4. Click the Continue button
+Expected result: Switches to hCaptcha
+
+TC-2. Entering all spaces
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write three spaces in the email field
+4. Press the Continue button
+Expected result: Pop-up with message Enter email
+
+TC-3. Entering the symbol space symbol
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write the symbol space symbol in the email field
+4. Press the Continue button
+Expected result: Pop-up with message Invalid email
+
+TC-4. Entering the symbol @ symbol
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write the symbol @ symbol in the email field
+4. Press the Continue button
+Expected result: Pop-up with message Invalid email
+
+TC-5. Entering the symbol and space
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write the symbol and space in the email field
+4. Press the Continue button
+Expected result: Pop-up with message Invalid email
+
+TC-6. Entering the space and valid email
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write the space and valid email
+4. Press the Continue button
+Expected result: Pop-up with message Invalid email
+
+TC-7. Null field for email
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Press the Continue button
+Expected result: Pop-up with message Enter email
+
+TC-8. Log in via Telegram
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market, there is a Telegram account
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Click Log in via Telegram
+4. Click Log in with Telegram
+5. Write your telephone number
+6. Click Next
+7. Enter to Telegram app
+8. Press Confirm for session
+9. Enter to Latoken app
+10. Click Accept
+11. Write your email to email field
+12. Click Continue
+Expected result: Switches to hCaptcha
+
+
+TC-9. Log in via Google
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market, there is a Google account
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Click Google
+4. Choose your Google account
+Expected result: Enters to your Latoken account
+
+TC-10. Sql-injection
+Priority: Immediate Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write select * to email field
+4. Click the Continue button
+Expected result: Pop-up with message Invalid email
+
+Bug-1. Enters with space before email 
+Severity: Major
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write the space and email
+4. Press the Continue button
+Expected result: Pop-up with message Invalid email
+Actual result:  Enters in the system
+Priority: Immediate
+
+Bug-2. When logging in via the Google API, the application asks you to enter an email
+Severity: Blocker
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Click Google
+Expected result: Enters to your Latoken account
+Actual result:  Asks you to enter an email
+Priority: Immediate
+
+TC-11. Entering password without uppercase
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write 12345678a to pass field
+4. Write this password again in the repeat password field
+5. Click Sign up
+Expected result: Pop-up with message Password must contain uppercase letters and digits
+
+TC-12. Entering password without digits
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write abcdefghijklmnop to pass field
+4. Write this password again in the repeat password field
+5. Click Sign up
+Expected result: Pop-up with message Password must contain uppercase letters and digits
+
+TC-13. Entering password without lowercase
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write 12345678A to pass field
+4. Write this password again in the repeat password field
+5. Click Sign up
+Expected result: The password doesn't fit
+
+TC-14.  Entering wrong password
+Priority: High Level
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Write 12345678Aa to pass field
+4. Write this password again in the repeat password field
+5. Click Sign up
+Expected result: Pop-up with message Passwords do not match
+
+Bug-3. When click Sign up you don't get any Pop-up
+Severity: Critickal
+
+Environment: Android 11
+
+Precondition: download the Latoken app from Play market
+Steps:
+
+1. Enter to Latoken app
+2. Click Log in or create account
+3. Enter select * to email field
+4. Click the Continue button
+5. Pass hCaptcha verification
+6. Write 12345678A to pass field
+7. Write this password again in the repeat password field
+8. Click Sign up
+Expected result: The password doesn't fit
+Actual result: When click Sign up you don't get any Pop-up
+Priority: Medium
